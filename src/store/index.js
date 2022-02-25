@@ -55,5 +55,14 @@ export default createStore({
         commit('toggleAuth');
       }
     },
+    async signout({ commit }) {
+      // Signout the user (clear the storage)
+      await auth.signOut();
+
+      // Toggle the authentication to false
+      commit('toggleAuth');
+
+      console.log('signout clicked');
+    },
   },
 });
