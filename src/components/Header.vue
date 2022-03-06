@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { mapActions, mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'Header',
@@ -50,7 +50,15 @@ export default {
   },
   methods: {
     ...mapMutations(['toggleAuthModal']),
-    ...mapActions(['signout']),
+
+    signout() {
+      this.$store.dispatch('signout');
+
+      // Redirect to home page if the user signout while in manage page
+      if (this.$route.meta.requiresAuth) {
+        this.$router.push({ name: 'home' });
+      }
+    },
   },
 };
 </script>
