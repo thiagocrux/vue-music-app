@@ -134,3 +134,21 @@
     </div>
   </section>
 </template>
+
+<script>
+// import store from '@/store';
+
+export default {
+  name: 'manage',
+
+  // beforeRouteEnter(to, from, next) {
+  //   // Proceeds to the page if the user is logged
+  //   if (store.state.userLoggedIn) {
+  //     next();
+  //   // Redirects to home page if the user isn't logged
+  //   } else {
+  //     next({ name: 'home' });
+  //   }
+  // },
+};
+</script>
